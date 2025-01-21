@@ -12,7 +12,7 @@ func main() {
 	router := http.NewServeMux()
 
 	// Path Parameter
-	router.HandleFunc("/item/{id}", func(w http.ResponseWriter, r *http.Request) {
+	router.HandleFunc("GET /item/{id}", func(w http.ResponseWriter, r *http.Request) {
 		id := r.PathValue("id")
 		w.Write([]byte("Recieved request for item id : " + id))
 	})
