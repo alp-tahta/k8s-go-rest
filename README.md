@@ -34,3 +34,28 @@ docker login
 
 ### Push to DockerHub(alptht is dockerhub username)
 docker push alptht/k8s-go-rest:multistage
+---
+
+###### K8s
+
+### Create New Deployment
+kubectl create deployment k8s-go-rest-deployment --image=alptht/k8s-go-rest:multistage
+
+### Show deployments
+kubectl get deploy
+
+### Create Service
+kubectl expose deployment k8s-go-rest-deployment --port=8080
+kubectl expose deployment k8s-go-rest-deployment --port=8080 --type=NodePort
+
+### List Services
+kubectl get services
+
+### Delete Service
+kubectl delete svc k8s-go-rest-deployment
+
+### Scale Deployment
+kubectl scale deployment k8s-go-rest-deployment --replicas=4
+
+### Get Pods
+kubectl get pods -o wide
