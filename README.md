@@ -1,9 +1,9 @@
 # k8s-go-rest
 simple restful api written in go for testing it on k8s
 
-### Build Image From Dockerfile
+### Build Image From Dockerfile(alptht is dockerhub username)
 docker build --tag k8s-go-rest .
-docker build -t k8s-go-rest:multistage -f Dockerfile.multistage .
+docker build -t alptht/k8s-go-rest:multistage -f Dockerfile.multistage .
 
 ### Check Docker Images
 docker image ls
@@ -32,5 +32,5 @@ docker restart k8s-go-rest
 ### Login to Docker
 docker login
 
-### Push to DockerHub
-docker push k8s-go-rest:multistage
+### Push to DockerHub(alptht is dockerhub username)
+docker push alptht/k8s-go-rest:multistage
