@@ -34,9 +34,10 @@ docker login
 
 ### Push to DockerHub(alptht is dockerhub username)
 docker push alptht/k8s-go-rest:multistage
+
 ---
 
-###### K8s
+###### K8s IMPERATIVE
 
 ### Create New Deployment
 kubectl create deployment k8s-go-rest-deployment --image=alptht/k8s-go-rest:multistage
@@ -66,3 +67,19 @@ minikube service k8s-go-rest
 
 ### Describe deployment
 kubectl describe deployment 
+
+### Delete everything(in Minikube kubernetes service will also be deleted, but automaticly recreated)
+kubectl delete all --all
+
+---
+
+##### K8s DECLERATIVE
+
+### Apply deployment and service
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+
+### Delete deployment and service
+kubectl delete -f deployment.yaml
+kubectl delete -f service.yaml
+kubectl delete -f deployment.yaml -f service.yaml
