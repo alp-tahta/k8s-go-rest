@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-go-rest
+spec:
+  selector:
+    matchLabels:
+      app: k8s-go-rest
+  template:
+    metadata:
+      labels:
+        app: k8s-go-rest
+    spec:
+      containers:
+      - name: k8s-go-rest
+        image: alptht/k8s-go-rest:multistage2
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: 8080
+  replicas: 4
