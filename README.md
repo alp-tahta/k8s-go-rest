@@ -83,3 +83,6 @@ kubectl apply -f service.yaml
 kubectl delete -f deployment.yaml
 kubectl delete -f service.yaml
 kubectl delete -f deployment.yaml -f service.yaml
+
+### Try to resolve service name inside pod
+kubectl exec <podName> -- nslookup <other-service-name>

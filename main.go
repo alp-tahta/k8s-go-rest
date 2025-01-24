@@ -11,7 +11,7 @@ import (
 func main() {
 	port := ":8080"
 
-	userAPI := "http://localhost:8080"
+	userAPI := "http://k8s-go-user:8081"
 
 	router := http.NewServeMux()
 
