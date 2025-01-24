@@ -19,7 +19,7 @@ func main() {
 			http.Error(w, "Failed to get hostname", http.StatusInternalServerError)
 			return
 		}
-		_, err = w.Write([]byte("Hostname : " + hostname))
+		_, err = w.Write([]byte("Hostname : " + hostname + time.Now().String()))
 		if err != nil {
 			log.Println(err)
 			http.Error(w, "Could not write data", http.StatusInternalServerError)

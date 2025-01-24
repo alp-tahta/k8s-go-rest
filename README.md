@@ -46,7 +46,8 @@ kubectl get deploy
 
 ### Create Service
 kubectl expose deployment k8s-go-rest-deployment --port=8080
-kubectl expose deployment k8s-go-rest-deployment --port=8080 --type=NodePort
+kubectl expose deployment k8s-go-rest-deployment --type=NodePort --port=8080
+kubectl expose deployment k8s-go-rest-deployment --type=LoadBalancer --port=8080
 
 ### List Services
 kubectl get services
@@ -59,3 +60,9 @@ kubectl scale deployment k8s-go-rest-deployment --replicas=4
 
 ### Get Pods
 kubectl get pods -o wide
+
+### Minikube problem fix for sending request
+minikube service k8s-go-rest
+
+### Describe deployment
+kubectl describe deployment 
